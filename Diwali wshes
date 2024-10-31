@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Wishes</title>
+    <style>
+        /* Updated Background */
+        body {
+            background: linear-gradient(to bottom, #ffcc70, #ff6363);
+            color: #fff;
+            font-family: 'Verdana', sans-serif;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        /* Container Styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+        /* Input Field Styling */
+        input[type="text"] {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            width: 80%;
+            max-width: 300px;
+        }
+        /* Button Styling */
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f0c929;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #ffaf00;
+            transform: scale(1.05);
+        }
+        /* Personalized Message */
+        #wishMessage {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ffeb3b;
+            text-shadow: 0px 0px 10px #ff5733, 0px 0px 20px #ff8d1a;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Fireworks Animation */
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('https://media.giphy.com/media/xUPGcqDNnTPRWdpK6g/giphy.gif') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diwali Wishes</h1>
+        <p>Enter your name to receive personalized Diwali wishes!</p>
+        <input type="text" id="nameInput" placeholder="Your Name" />
+        <button onclick="displayWish()">Get Diwali Wishes</button>
+        <div id="wishMessage"></div>
+    </div>
+    <div class="fireworks"></div>
+
+    <script>
+        function displayWish() {
+            const name = document.getElementById("nameInput").value;
+            const wishMessage = document.getElementById("wishMessage");
+
+            if (name.trim()) {
+                wishMessage.innerHTML = `Happy Diwali, ${name}! 🎆<br> May your Diwali be filled with joy, light, and prosperity!`;
+            } else {
+                wishMessage.innerHTML = "Please enter your name!";
+            }
+        }
+    </script>
+</body>
+</html>
